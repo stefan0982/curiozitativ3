@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import { makeStyles }                 from '@material-ui/core/styles'
-import GridList                       from '@material-ui/core/GridList'
-import IconButton                     from '@material-ui/core/IconButton'
+import React, { useEffect, useState }    from 'react'
+import { makeStyles }                    from '@material-ui/core/styles'
+import GridList                          from '@material-ui/core/GridList'
+import IconButton                        from '@material-ui/core/IconButton'
 import logo                              from '../../../static/logo.png'
 import { Typography }                    from '@material-ui/core'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import GatsbyImage                       from 'gatsby-image'
 import slug                              from 'slug'
+import Skeleton                          from '@material-ui/lab/Skeleton'
 
 const query = graphql`
   {
@@ -57,7 +58,6 @@ export default function HorizontalList() {
     setWindowHeight( window.innerHeight )
   }
 
-
   useEffect( () => {
     resizeWindow()
     typeof window !== `undefined` && window.addEventListener( 'resize',
@@ -77,7 +77,37 @@ export default function HorizontalList() {
   }
 
   if (loading) {
-    return <p>loading</p>
+    return <div style={ { height: containerHeight } }>
+      <div className={ classes.root }>
+        <Skeleton
+          variant="circle"
+          width={ categorySize }
+          height={ categorySize }
+        />
+        <Skeleton
+          variant="circle"
+          width={ categorySize }
+          height={ categorySize }
+        />
+        <Skeleton
+          variant="circle"
+          width={ categorySize }
+          height={ categorySize }
+        />
+        <Skeleton
+          variant="circle"
+          width={ categorySize }
+          height={ categorySize }
+        />
+        <Skeleton
+          variant="circle"
+          width={ categorySize }
+          height={ categorySize }
+        />
+      </div>
+      <Skeleton variant="text" />
+      <Skeleton variant="text" />
+    </div>
   }
 
   return (

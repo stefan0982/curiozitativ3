@@ -8,7 +8,8 @@ import Avatar                            from '@material-ui/core/Avatar'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import GatsbyImage                       from 'gatsby-image'
 
-import slug from 'slug'
+import slug     from 'slug'
+import Skeleton from '@material-ui/lab/Skeleton'
 
 const query = graphql`{
   categorii: allContentfulCategorii(sort: {order: DESC, fields: curiozitati___children}) {
@@ -55,7 +56,16 @@ export default function RightContainer() {
   // prin schimbarea doar la link cu if = toate, link to / else slug(categorie)
 
   if (loading) {
-    return <p>loading</p>
+    return <List dense className={ classes.root }>
+      {[0,1,2,3,4,5,6,7,8,9].map(i => (
+        <ListItem button className={ classes.item } key={i}>
+          <ListItemAvatar>
+            <Skeleton variant="circle" width={40} height={40} />
+          </ListItemAvatar>
+          <ListItemText style={{ color: 'black' }} primary={ <Skeleton variant="text" /> } />
+        </ListItem>
+      ))}
+    </List>
   }
   return (
     <List
