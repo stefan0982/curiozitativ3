@@ -27,13 +27,6 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
-    {
-      resolve: `gatsby-plugin-google-gtag`, options: {
-        trackingIds: [
-          process.env.GA_TRACKING_ID,
-        ],
-      },
-    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
