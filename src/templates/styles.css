@@ -1,0 +1,35 @@
+.disable-link {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.MuiCardHeader-avatar {
+    height: 40px;
+}
+
+@media only screen and (min-width: 976px) {
+    .header {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+    .header {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .header {
+        padding-left: 250px;
+        padding-right: 250px;
+    }
+}
