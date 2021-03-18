@@ -54,6 +54,8 @@ export default function RightContainer() {
   // de simplificat sistema aceasta
   // prin schimbarea doar la link cu if = toate, link to / else slug(categorie)
 
+  console.log(loading)
+
   if (loading) {
     return <p>loading</p>
   }
