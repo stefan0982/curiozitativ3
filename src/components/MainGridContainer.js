@@ -4,6 +4,7 @@ import Grid           from '@material-ui/core/Grid';
 import { Hidden }     from '@material-ui/core'
 import RightContainer from './RightContainer/RightContainer'
 import HorizontalList from './TopCategories/HorizontalList'
+import FadeComponent  from './FadeComponent'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,7 +43,8 @@ export default function MainGridContainer({children}) {
         <Hidden smDown>
           <Grid item xs={12} md={4} lg={3} xl={3}>
             {/*<div style={{ height: 500, border: '1px solid orange', borderRadius: 4, position: 'fixed', width: 300 }}/>*/}
-            <RightContainer/>
+            {/*<RightContainer/>*/}
+            <FadeComponent/>
           </Grid>
         </Hidden>
       </Grid>
