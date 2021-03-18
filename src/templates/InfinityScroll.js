@@ -45,8 +45,8 @@ const InfinityScroll = ({ pageContext: { data } }) => {
         description="O zi în care nu înveți nimic nou este o zi pierdută, deaceea află cele mai interesante curiozități aici"
       />
       <MainGridContainer>
-        <CardPerformance/>
-        <CardPerformance/>
+        {/*<CardPerformance/>*/}
+        {/*<CardPerformance/>*/}
 
         { currentList.map( ({ node }) => (
           <PostCard

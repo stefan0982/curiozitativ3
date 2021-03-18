@@ -68,6 +68,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Disable the loading spinner.
+        showSpinner: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,

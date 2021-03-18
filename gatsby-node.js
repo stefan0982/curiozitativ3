@@ -22,7 +22,7 @@ exports.createPages = async ({
         data: createdAt
         linkId: createdAt(formatString: "DDMMYYHHmmss", locale: "ro")
         imagine {
-          fluid {
+          fluid(maxWidth: 100) {
             base64
             aspectRatio
             src
