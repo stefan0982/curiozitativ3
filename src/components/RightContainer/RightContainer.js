@@ -1,4 +1,4 @@
-import React                       from 'react'
+import React, {useState, useEffect}                       from 'react'
 import { makeStyles }              from '@material-ui/core/styles'
 import List                        from '@material-ui/core/List'
 import ListItem                    from '@material-ui/core/ListItem'
@@ -41,14 +41,22 @@ const useStyles = makeStyles ( (theme) => (
 ) )
 
 export default function RightContainer() {
+  const [loading, setLoading] = useState( true )
   const classes = useStyles ()
   const { categorii } = useStaticQuery ( query )
   // categoria toate la care pagina trebuie sa fie doar /
   const categoriaToate = categorii.edges.filter(data => data.node.denumirea === 'Toate')[0].node
 
+  useEffect(() => {
+    setLoading(false)
+  }, [])
+
   // de simplificat sistema aceasta
   // prin schimbarea doar la link cu if = toate, link to / else slug(categorie)
 
+  if (loading) {
+    return <p>loading</p>
+  }
   return (
     <List
       dense

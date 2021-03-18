@@ -47,6 +47,7 @@ const useStyles = makeStyles( (theme) => (
 ) )
 
 export default function HorizontalList() {
+  const [loading, setLoading] = useState( true )
   const classes = useStyles()
   const { categorii } = useStaticQuery( query )
   const [windowWidth, setWindowWidth] = useState( 0 )
@@ -62,6 +63,7 @@ export default function HorizontalList() {
     typeof window !== `undefined` && window.addEventListener( 'resize',
       resizeWindow,
     )
+    setLoading(false)
     return () => typeof window !== `undefined` && window.removeEventListener(
       'resize', resizeWindow )
   }, [] )
@@ -72,6 +74,10 @@ export default function HorizontalList() {
   if (windowWidth <= 500 && windowHeight < 500) {
     containerHeight = '21vh'
     categorySize = '11vh'
+  }
+
+  if (loading) {
+    return <p>loading</p>
   }
 
   return (
